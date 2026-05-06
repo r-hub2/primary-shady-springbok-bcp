@@ -1,0 +1,22 @@
+Package: bcp
+Type: Package
+Title: Bayesian Analysis of Change Point Problems
+Version: 4.0.4
+Date: 2026-05-05
+Author: Xiaofei Wang, Chandra Erdman, John W. Emerson, and Kaiguang Zhao
+Maintainer: Kaiguang Zhao <zhao.1423@osu.edu>
+Depends: graphics, methods, grid
+Suggests: DNAcopy, coda, strucchange, vegan, ggplot2, igraph
+Description: Provides an implementation of the Barry and Hartigan (1993) product
+    partition model for the normal errors change point problem using Markov Chain
+    Monte Carlo. It also extends the methodology to regression models on a connected
+    graph (Wang and Emerson, 2015); this allows estimation of change point models
+    with multivariate responses. Parallel MCMC, previously available in bcp v.3.0.0,
+    is currently not implemented.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.11.0)
+LinkingTo: Rcpp, RcppArmadillo
+NeedsCompilation: yes
+Repository: CRAN
+Encoding: UTF-8
+Packaged: 2026-05-06 05:38:27 UTC; zhaokg
