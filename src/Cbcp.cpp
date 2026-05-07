@@ -427,7 +427,7 @@ MCMCStepSeq pass(MCMCStepSeq &step, HelperVariables &helpers,
 SEXP rcpp_bcpR(SEXP py, SEXP px, SEXP pgrpinds, SEXP pid, SEXP pmcmcreturn, SEXP pburnin, SEXP pmcmc, SEXP pa,
                SEXP pw, SEXP pba, SEXP pnreg) {
   // INITIALIZATION OF LOCAL VARIABLES
-  int i, j, m, start, end, start2, end2, resultStart=0, resultEnd=0;
+  int i, j, m, start, end, start2, end2, resultStart, resultEnd;
   double Wtilde, wstar, bmean, xmax, tmpAlpha;
 
   // INITIALIZATION OF OTHER OBJECTS

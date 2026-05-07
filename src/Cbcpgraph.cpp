@@ -37,7 +37,7 @@ void recomputeVals(Graph &graph, Partition &components, GraphParams &params)
   DoubleMatrix means(components.size(), mean);
   int currblock, i, j;
 
-  for (i = 0; i < (int) graph.nodes.size(); i++) {
+  for (i = 0; i < graph.nodes.size(); i++) {
     currblock = graph.nodes[i].component;
     for (j = 0; j < params.kk; j++) {
       means[currblock][j] += graph.nodes[i].value[j];
@@ -46,7 +46,7 @@ void recomputeVals(Graph &graph, Partition &components, GraphParams &params)
     }
   }
 
-  for (i = 0; i < (int)  components.size(); i++) {
+  for (i = 0; i < components.size(); i++) {
     B[i] = 0;
 
     for (j = 0; j < params.kk; j++) {
@@ -55,7 +55,7 @@ void recomputeVals(Graph &graph, Partition &components, GraphParams &params)
     }
 
     W[i] -= B[i];
-    Rprintf("Recomputed: i:%d, W: %0.2f, B: %0.2f, size: %d\n", i, W[i], B[i],
+    Rprintf("Recomputed: i:%d, W: %0.2f, B: %0.2f, size: %d, %0.2f\n", i, W[i], B[i],
             components[i].size);
   }
 }
@@ -80,7 +80,7 @@ void fullPixelPass(Graph &graph, Partition &components, GraphParams &params, MCM
 
     // loop through all possible components
     for (j = 0; j < maxComp; j++) {
-      if (j == (int) components.size()) {
+      if (j == components.size()) {
         Component newestBlock(graph.nodes[i]);
         possibleBlocks.push_back(newestBlock);
       } else if (j != currblock) {
@@ -183,8 +183,8 @@ void activePixelPass(Graph &graph, Partition &components, GraphParams &params,
       }
 
       // loop through all possible components
-      for (j = 0; j <=  (int) components.size(); j++) {
-        if (j == (int) components.size()) { // consider making own block
+      for (j = 0; j <= components.size(); j++) {
+        if (j == components.size()) { // consider making own block
           if (components[currblock].size != graph.nodes[i].size) {
             Component newestBlock(graph.nodes[i]);
             possibleBlocks.push_back(newestBlock);
@@ -267,7 +267,7 @@ SEXP rcpp_ppm(SEXP pdata, SEXP pid, SEXP padj, SEXP pmcmcreturn,
   for (i = 0; i < params.nn; i++) {
     graph.nodes[i].calcActiveAndBound(graph.nodes);
 
-    if ((int) membInit[i] >= (int)components.size()) {
+    if ((int) membInit[i] >= components.size()) {
       Component newComp(graph.nodes[i]);
       components.push_back(newComp);
     } else {
