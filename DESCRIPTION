@@ -3,8 +3,19 @@ Type: Package
 Title: Bayesian Analysis of Change Point Problems
 Version: 4.0.4
 Date: 2026-05-05
-Author: Xiaofei Wang, Chandra Erdman, John W. Emerson, and Kaiguang Zhao
-Maintainer: Kaiguang Zhao <zhao.1423@osu.edu>
+Authors@R: c(person(given = "Xiaofei",
+                        family = "Wang",
+                        role = "aut"),
+                 person(given = "Chandra",
+                        family = "Erdman",
+                        role = "aut"),
+                 person(given = c("John", "W."),
+                        family = "Emerson",
+                        role = "aut"),
+                 person(given = "Kaiguang",
+                        family = "Zhao",
+                        role = c("aut", "cre"),
+                        email = "zhao.1423@osu.edu"))
 Depends: graphics, methods, grid
 Suggests: DNAcopy, coda, strucchange, vegan, ggplot2, igraph
 Description: Provides an implementation of the Barry and Hartigan (1993) product
@@ -19,6 +30,13 @@ LinkingTo: Rcpp, RcppArmadillo
 LazyData: true
 LazyLoad: true
 NeedsCompilation: yes
+URL: https://github.com/zhaokg/bcp
+BugReports: https://github.com/zhaokg/bcp/issues
 Repository: CRAN
 Encoding: UTF-8
-Packaged: 2026-05-07 03:41:50 UTC; zhaokg
+Packaged: 2026-05-07 04:20:20 UTC; zhaokg
+Author: Xiaofei Wang [aut],
+  Chandra Erdman [aut],
+  John W. Emerson [aut],
+  Kaiguang Zhao [aut, cre]
+Maintainer: Kaiguang Zhao <zhao.1423@osu.edu>
