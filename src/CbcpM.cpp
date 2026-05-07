@@ -82,7 +82,7 @@ MCMCStepSeq pass(MCMCStepSeq &step, HelperVariables &helpers, Params &params)
   DoubleVec bmean1(params.kk, 0);
   DoubleVec bmean2(params.kk, 0);
   DoubleVec bmean3(params.kk, 0);
-  double bZ1, bZ2, bZ3;
+  double bZ1=0.0, bZ2=0.0, bZ3=0.0; // 'bZ1' may be used uninitialized [-Wmaybe-uninitialized]
 
   IntVec bvals(2);
   DoubleVec Wvals(2);
